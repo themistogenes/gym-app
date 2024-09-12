@@ -65,7 +65,7 @@ export default function Generator() {
           Object.keys(WORKOUTS).map((type, typeIndex) => {
             return (
               <button 
-                className={'bg-slate-950 border duration-200 hover:border-blue-600 py-3 rounded-lg ' + (type === poison ? 'border-blue-600' : 'border-blue-400')} 
+                className={'bg-slate-950 border duration-200 hover:border-blue-600 px-4 py-3 rounded-lg ' + (type === poison ? 'border-blue-600' : 'border-blue-400')} 
                 key={typeIndex}
                 onClick={() => {
                   setPoison(type);
@@ -129,7 +129,7 @@ export default function Generator() {
           Object.keys(SCHEMES).map((scheme, schemeIndex) => {
             return (
               <button 
-                className={'bg-slate-950 border duration-200 hover:border-blue-600 py-3 rounded-lg ' + (scheme === goal ? 'border-blue-600' : 'border-blue-400')} 
+                className={'bg-slate-950 border duration-200 hover:border-blue-600 px-4 py-3 rounded-lg ' + (scheme === goal ? 'border-blue-600' : 'border-blue-400')} 
                 key={schemeIndex}
                 onClick={() => {
                   setGoal(scheme);
