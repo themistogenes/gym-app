@@ -6,6 +6,7 @@ export default function Workout({ workout }) {
     <SectionWrapper 
       header={"Welcome to"} 
       title={['The', 'DANGER', 'Zone']}
+      id="workout"
     >
       <div className="flex flex-col gap-4">
         {
