@@ -14,7 +14,8 @@ function App() {
     if (muscles.length < 1) {
       return;
     }
-    let newWorkout = generateWorkout(poison, muscles, goal);
+    let newWorkout = generateWorkout({poison, muscles, goal});
+    console.log(newWorkout);
     setWorkout(newWorkout);
   }
 

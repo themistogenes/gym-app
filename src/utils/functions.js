@@ -1,4 +1,7 @@
-export function generateWorkout({ muscles, poison, goal }) {
+import { EXERCISES, SCHEMES, TEMPOS, WORKOUTS } from "./swoldier"
+const exercises = exercisesFlattener(EXERCISES)
+
+export function generateWorkout({ muscles, poison: workout, goal }) {
   let exer = Object.keys(exercises);
   exer = exer.filter((key) => exercises[key].meta.environment !== "home");
   let includedTracker = [];
