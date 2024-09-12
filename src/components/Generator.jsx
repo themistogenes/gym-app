@@ -18,7 +18,7 @@ export default function Generator() {
   const [showModal, setShowModal] = useState(false);
   const [poison, setPoison] = useState('individual');
   const [muscles, setMuscles] = useState([]);
-  const [goals, setGoals] = useState('strength_power');
+  const [goal, setGoal] = useState('strength_power');
 
   function toggleModal() {
     setShowModal(!showModal);
@@ -39,8 +39,11 @@ export default function Generator() {
           Object.keys(WORKOUTS).map((type, typeIndex) => {
             return (
               <button 
-                className="bg-slate-950 border border-blue-400 duration-200 hover:border-blue-600 py-3 rounded-lg" 
+                className={'bg-slate-950 border duration-200 hover:border-blue-600 py-3 rounded-lg ' + (type === poison ? 'border-blue-600' : 'border-blue-400')} 
                 key={typeIndex}
+                onClick={() => {
+                  setPoison(type);
+                }}
               >
                 <p className="capitalize">
                   {type.replaceAll('_', ' ')}
@@ -65,7 +68,8 @@ export default function Generator() {
         </button>
         {
           showModal && (
-            <div>modal</div>
+            <div className="flex flex-col px-3 p-bottom-3">
+            </div>
           )
         }
       </div>
@@ -75,13 +79,15 @@ export default function Generator() {
         description={'Select your ultimate objective.'}
       />
       <div className="grid grid-cols-2 gap-4">
-        {
+      {
           Object.keys(SCHEMES).map((scheme, schemeIndex) => {
             return (
               <button 
-                className="bg-slate-950 border border-blue-400 duration-200 hover:border-blue-600 py-3 rounded-lg" 
+                className={'bg-slate-950 border duration-200 hover:border-blue-600 py-3 rounded-lg ' + (scheme === goal ? 'border-blue-600' : 'border-blue-400')} 
                 key={schemeIndex}
-                onClick={() => {}}
+                onClick={() => {
+                  setGoal(scheme);
+                }}
               >
                 <p className="capitalize">
                   {scheme.replaceAll('_', ' ')}
