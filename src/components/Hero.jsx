@@ -10,7 +10,12 @@ export default function Hero() {
       <p className="text-sm md:text-base font-light">
         I hereby acknowledge that I may become <span className="text-blue-400 font-medium">unbelievably swolenormous</span> and accept all risks of becoming the local <span className="text-blue-400 font-medium">mass monstrosity</span>, afflicted with severe body dysmorphia, unable to fit through doors.
       </p>
-      <Button text="Accept & Begin" />
+      <Button 
+        text="Accept & Begin" 
+        func={() => {
+          window.location.href='#generate'
+        }}
+      />
     </div>
   )
 }

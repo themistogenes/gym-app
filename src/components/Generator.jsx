@@ -59,6 +59,7 @@ export default function Generator({
     <SectionWrapper 
       header={"generate your workout"} 
       title={['It\'s', 'Huge', 'o\'clock']}
+      id="generate"
     >
       <Header
         index={'01'}
